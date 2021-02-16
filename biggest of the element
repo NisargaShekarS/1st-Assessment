@@ -1,0 +1,37 @@
+---------------biggest of the element-------------
+
+#include <stdio.h>
+int main()
+{
+    int a[10];
+    int no=0,big=0;
+    printf("enter ten numbers\n");
+    for(int i=0;i<10;i++)
+    {
+        scanf("%d\n",&a[i]);
+        if(a[i]>big)
+        big=a[i];
+    }
+    printf("biggest no is %d",big);
+    return 0;
+    }
+    
+    -------------using dynamic memory allocation--------
+    
+#include <stdio.h>
+int main()
+{
+    int a[10];
+    int no=0,big=0;
+    int *p;
+    p=(int*)malloc(sizeof(int));
+    printf("enter ten numbers\n");
+    for(int i=0;i<10;i++)
+    {
+        scanf("%d\n",&a[i]);
+        if(a[i]>big)
+        big=a[i];
+    }
+    printf("biggest no is %d\n",big);
+    return 0;
+    }
