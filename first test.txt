@@ -1,0 +1,138 @@
+1a) #include <stdio.h>
+int a=100;
+int main()
+{
+    printf("before %d\n",a);
+    change(a);
+    printf("after %d\n",a);
+    return 0;
+}
+void change(int a)
+{
+    a=a+100;
+}
+}
+
+
+1b)#include <stdio.h>
+
+int main()
+{
+    int a=10;
+    printf("before %d\n",a);
+    change(&a);
+    printf("after %d\n",a);
+    return 0;
+}
+void change(int *p)
+{
+    (*p)=(*p)+100;
+}
+
+
+2)#include <stdio.h>
+
+int main()
+{
+    int a[10];
+    int no=0,big=0;
+    printf("enter ten numbers\n");
+    for(int i=0;i<10;i++)
+    {
+        scanf("%d\n",&a[i]);
+        if(a[i]>big)
+        big=a[i];
+    }
+    printf("biggest no is %d",big);
+    return 0;
+    }
+
+2)memory allocation
+#include <stdio.h>
+
+int main()
+{
+    int a[10];
+    int no=0,big=0;
+    int *p;
+    p=(int*)malloc(sizeof(int));
+    printf("enter ten numbers\n");
+    for(int i=0;i<10;i++)
+    {
+        scanf("%d\n",&a[i]);
+        if(a[i]>big)
+        big=a[i];
+    }
+    printf("biggest no is %d\n",big);
+    return 0;
+    }
+
+
+4)#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int *p;
+    p=(int*)malloc(sizeof(int)*10);
+    int key,flag=0,i;
+    printf("enter array elements\n");
+    for(i=0;i<10;i++)
+    {
+        scanf("%d",&p[i]);
+    }
+    printf("enter key value\n");
+    scanf("%d",&key);
+    for(i=0;i<10;i++)
+    {
+        if((p[i])==key)
+        {
+            flag=1;
+        }
+    }
+        if(flag==1)
+        {
+            printf("key found\n");
+        }
+        else
+        {
+            printf("key not found\n");
+            return 0;
+            
+        }
+}
+        
+           
+6)#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct student{
+    char usn[10];
+    char name[10];
+    char branch[10];
+}s1;
+struct emp{
+    char id[10];
+    char name[10];
+    char address[10];
+}e1;
+struct faculty{
+    char name[10];
+    int age;
+}f1;
+int main()
+{
+    printf("Student details\n");
+    scanf("%s %s %s",&s1.usn,&s1.name,&s1.branch);
+    printf("%s\t %s\t %s\t",s1.usn,s1.name,s1.branch);
+    
+    printf("emp details\n");
+    scanf("%s %s %s",&e1.id,&e1.name,&e1.address);
+    printf("%s\t %s\t %s\t",e1.id,e1.name,e1.address);
+    
+    printf("faculty details\n");
+    scanf("%s %d",&f1.name,&f1.age);
+    printf("%s\t %d",f1.name,f1.age);
+    return 0;
+}
+
+
